@@ -118,12 +118,12 @@ function serverHandler(request, response) {
         try {
             stats = fs.lstatSync(filename);
 
-            if (filename && filename.search(/demos/g) === -1 && stats.isDirectory()) {
+            if (filename && filename.search(/public/g) === -1 && stats.isDirectory()) {
                 if (response.redirect) {
-                    response.redirect('/demos/');
+                    response.redirect('/public/');
                 } else {
                     response.writeHead(301, {
-                        'Location': '/demos/'
+                        'Location': '/public/'
                     });
                 }
                 response.end();
@@ -143,15 +143,15 @@ function serverHandler(request, response) {
                 'Content-Type': 'text/html'
             });
 
-            if (filename.indexOf(resolveURL('/demos/MultiRTC/')) !== -1) {
-                filename = filename.replace(resolveURL('/demos/MultiRTC/'), '');
-                filename += resolveURL('/demos/MultiRTC/index.html');
-            } else if (filename.indexOf(resolveURL('/demos')) !== -1) {
-                filename = filename.replace(resolveURL('/demos/'), '');
-                filename = filename.replace(resolveURL('/demos'), '');
-                filename += resolveURL('/demos/index.html');
+            if (filename.indexOf(resolveURL('/public/MultiRTC/')) !== -1) {
+                filename = filename.replace(resolveURL('/public/MultiRTC/'), '');
+                filename += resolveURL('/public/MultiRTC/index.html');
+            } else if (filename.indexOf(resolveURL('/public')) !== -1) {
+                filename = filename.replace(resolveURL('/public/'), '');
+                filename = filename.replace(resolveURL('/public'), '');
+                filename += resolveURL('/public/index.html');
             } else {
-                filename += resolveURL('/demos/index.html');
+                filename += resolveURL('/public/index.html');
             }
         }
 
@@ -177,7 +177,7 @@ function serverHandler(request, response) {
             }
 
             try {
-                var demos = (fs.readdirSync('demos') || []);
+                var public = (fs.readdirSync('demos') || []);
 
                 if (demos.length) {
                     var h2 = '<h2 style="text-align:center;display:block;"><a href="https://www.npmjs.com/package/rtcmulticonnection-v3"><img src="https://img.shields.io/npm/v/rtcmulticonnection-v3.svg"></a><a href="https://www.npmjs.com/package/rtcmulticonnection-v3"><img src="https://img.shields.io/npm/dm/rtcmulticonnection-v3.svg"></a><a href="https://travis-ci.org/muaz-khan/RTCMultiConnection"><img src="https://travis-ci.org/muaz-khan/RTCMultiConnection.png?branch=master"></a></h2>';

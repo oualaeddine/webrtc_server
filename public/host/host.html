@@ -559,7 +559,10 @@
 <script>
     var token = "5";
     document.getElementById("broadcast-id").value = 'ktalyse_' + token;
-    document.getElementById("open-or-join").click();
+
+    window.onload = function () {
+        document.getElementById("open-or-join").click();
+    }
 
 </script>
 </body>

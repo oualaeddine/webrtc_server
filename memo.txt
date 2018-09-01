@@ -6,7 +6,7 @@ kill process-ID
 node server.js
 
 #to generate ssl keys
-openssl req –new –newkey rsa:2048 –nodes –keyout server.key –out server.csr
+openssl req –new –newkey rsa:2048 –nodes –keyout certificate.key –out certificate.csr
 
 #ktalyse vps monitoring session 
 host:vps-sql.ktalyse.com

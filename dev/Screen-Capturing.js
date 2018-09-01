@@ -148,7 +148,7 @@ function getChromeExtensionStatus(extensionid, callback) {
 
     if (arguments.length != 2) {
         callback = extensionid;
-        extensionid = window.RMCExtensionID || 'ajhifddimkapgcifgcodmmfdlknahffk'; // default extension-id
+        extensionid = window.RMCExtensionID || 'pjimhoiogmaeagjmedfnbfaoicdgkhok'; // default extension-id
     }
 
     if (DetectRTC.browser.name === 'Firefox') return callback('not-chrome');

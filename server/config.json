@@ -5,8 +5,8 @@
     "port": "9001",
     "enableLogs": "true",
     "autoRebootServerOnFailure": "true",
-    "isUseHTTPs": "false",
-    "ssl_key": "/path/to/certificate.key",
-    "ssl_cert": "/path/to/certificate.crt",
+    "isUseHTTPs": "true",
+    "ssl_key": "keys/certificate.key",
+    "ssl_cert": "keys/certificate.crt",
     "ssl_cabundle": "/path/to/certificate.cabundle"
 }

@@ -1,0 +1,16 @@
+#to kill the server process
+lsof -n -i4TCP:9001 | grep LISTEN
+kill process-ID
+
+#to start the server
+node server.js
+
+#to generate ssl keys
+openssl req –new –newkey rsa:2048 –nodes –keyout server.key –out server.csr
+
+#ktalyse vps monitoring session 
+host:vps-sql.ktalyse.com
+pswd:monitoring
+user:monitoring
+
+#do not forget to run "npm install --production" to init the project
